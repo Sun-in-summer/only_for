@@ -12,7 +12,7 @@ export const YearsDisplay = styled.div`
 export const StartYear = styled.div`
   font-size: 200px;
   font-weight: 700;
-  color: #5d7299;
+  color: #5d5fef;
   line-height: 1;
   transition: opacity 0.3s ease;
 

@@ -1,6 +1,6 @@
 import { TimeSegment } from '../../shared/interfaces/time-segment';
 import {
-  Container,
+  CircleContainer,
   Circle,
   CenterLine,
   VerticalLine,
@@ -24,10 +24,10 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
 }) => {
 
    return (
-     <Container>
+     <CircleContainer>
        <Circle>
-         <CenterLine />
-         <VerticalLine />
+         {/* <CenterLine />
+         <VerticalLine /> */}
          <PeriodPointsList
            sampleData={sampleData}
            activePeriod={activePeriod}
@@ -35,7 +35,7 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
            onPeriodChange={onPeriodChange}
          />
        </Circle>
-     </Container>
+     </CircleContainer>
    );
 };
 

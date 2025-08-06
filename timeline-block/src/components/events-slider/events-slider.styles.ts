@@ -29,11 +29,11 @@ import styled from "styled-components";
 //   width: 100%;
 //   overflow: hidden;
 // `;
-// export const SliderTrack = styled.div`
-//   display: flex;
-//   gap: 20px;
-//   transition: transform 0.3s ease;
-// `;
+export const SliderTrack = styled.div`
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease;
+`;
 export const Slide = styled.div`
   min-width: 300px;
   padding: 0;
@@ -41,7 +41,7 @@ export const Slide = styled.div`
 export const EventYear = styled.div`
   font-size: 25px;
   font-weight: 400;
-  color: #5d7299;
+  color: #5d5FEF;
   margin-bottom: 15px;
 `;
 
@@ -51,3 +51,4 @@ export const EventDescription = styled.div`
   color: #42567a;
   line-height: 1.5;
 `;
+   

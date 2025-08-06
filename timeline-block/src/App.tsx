@@ -1,11 +1,10 @@
 import TimelineBlock from './components/time-line-block/time-line-block';
-
-
+import { Section } from './styles/section';
 
 const App = () => (
-  <div>
+  <Section>
     <TimelineBlock />
-  </div>
+  </Section>
 );
 
 export default App;

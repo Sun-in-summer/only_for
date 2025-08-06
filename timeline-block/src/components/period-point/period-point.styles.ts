@@ -26,7 +26,7 @@ export const PeriodPoint = styled.button`
   }
 
   &:hover.inactive {
-    background: #5d7299;
+    background: #5d5fef;
   }
 `;
 

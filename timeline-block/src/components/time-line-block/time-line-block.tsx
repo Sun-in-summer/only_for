@@ -8,13 +8,14 @@ import CircleTimeline from '../circle-time-line/circle-time-line';
 import YearsDisplay from '../years-display/years-display';
 import Navigation from '../navigation/navigation';
 import EventsSlider from '../events-slider/events-slider';
+import { CenterLine, Container, InnerContainer, Title, VerticalLine } from './time-line-block.styes';
 
 
 
 
 const TimelineBlock: React.FC = () => {
   const [activePeriod, setActivePeriod] = useState(0);
-    const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   
   const sampleData = getSampleData();
@@ -31,41 +32,46 @@ const TimelineBlock: React.FC = () => {
       setTimeout(() => setIsAnimating(false), 300);
     };
   
-    const nextSlide = () => {
-      const maxSlides = sampleData[activePeriod].events.length;
-      setCurrentSlide((prev) => (prev + 1) % maxSlides);
-    };
+    // const nextSlide = () => {
+    //   const maxSlides = sampleData[activePeriod].events.length;
+    //   setCurrentSlide((prev) => (prev + 1) % maxSlides);
+    // };
   
-    const prevSlide = () => {
-      const maxSlides = sampleData[activePeriod].events.length;
-      setCurrentSlide((prev) => (prev - 1 + maxSlides) % maxSlides);
-    };
+    // const prevSlide = () => {
+    //   const maxSlides = sampleData[activePeriod].events.length;
+    //   setCurrentSlide((prev) => (prev - 1 + maxSlides) % maxSlides);
+    // };
   
  
   return (
-    <div>
-      <CircleTimeline
-        sampleData={sampleData}
-        activePeriod={activePeriod}
-        onPeriodChange={handlePeriodChange}
-        angleStep={angleStep}
-      />
+    <Container>
+      <InnerContainer>
+        <Title>Исторические даты</Title>
+        <CenterLine />
+        <VerticalLine />
+        <CircleTimeline
+          sampleData={sampleData}
+          activePeriod={activePeriod}
+          onPeriodChange={handlePeriodChange}
+          angleStep={angleStep}
+        />
 
-      <YearsDisplay
-        isAnimating={isAnimating}
-        sampleData={sampleData}
-        activePeriod={activePeriod}
-      />
+        <YearsDisplay
+          isAnimating={isAnimating}
+          sampleData={sampleData}
+          activePeriod={activePeriod}
+        />
 
-      <Navigation
-        totalPeriods={totalPeriods}
-        activePeriod={activePeriod}
-        handlePeriodChange={handlePeriodChange}
-        isAnimating={isAnimating}
-      />
+        <Navigation
+          totalPeriods={totalPeriods}
+          activePeriod={activePeriod}
+          handlePeriodChange={handlePeriodChange}
+          isAnimating={isAnimating}
+        />
 
-      <EventsSlider activeEvents={sampleData[activePeriod].events} />
-    </div>
+        <EventsSlider activeEvents={sampleData[activePeriod].events} />
+      </InnerContainer>
+    </Container>
   );
 };
 

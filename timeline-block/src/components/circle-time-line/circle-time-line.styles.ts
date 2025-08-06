@@ -1,24 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 170px 80px 104px;
-  background: #f4f5f9;
-  font-family: "PT Sans", sans-serif;
-  position: relative;
-  overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 80px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: rgba(66, 86, 122, 0.1);
-  }
+export const CircleContainer = styled.div`
+  position: relative;
+  height: 530px;
+  margin-bottom: 56px;
 `;
 
 

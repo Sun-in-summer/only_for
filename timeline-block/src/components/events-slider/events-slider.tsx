@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EventName } from '../../shared/interfaces/event-name';
-import { EventDescription, EventYear, Slide, SliderTrack } from './events-slider.styles';
+import { EventDescription, EventYear, SingleSlide, SliderTrack } from './events-slider.styles';
 
 
 type EventsSliderProps = {
@@ -14,12 +14,10 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ activeEvents }) => {
           <SwiperSlide key={index}>
             <SliderTrack>
               {activeEvents.map((event, index) => (
-                <div  key={index}>
-                  <div>
-                    <EventYear>{event.year}</EventYear>
-                    <EventDescription>{event.description}</EventDescription>
-                  </div>
-                </div>
+                <SingleSlide key={index}>
+                  <EventYear>{event.year}</EventYear>
+                  <EventDescription>{event.description}</EventDescription>
+                </SingleSlide>
               ))}
             </SliderTrack>
           </SwiperSlide>

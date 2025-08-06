@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
-export const Navigation =  styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 56px;
-`
+export const Navigation = styled.div`
+  margin-top: -56px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // margin-bottom: 56px;
+`;
 
 export const NavInfo =  styled.div`
   font-size: 14px;
   color: #42567A;
+  margin-bottom: 20px;
 `
 export const NavButtons =  styled.div`
   display: flex;

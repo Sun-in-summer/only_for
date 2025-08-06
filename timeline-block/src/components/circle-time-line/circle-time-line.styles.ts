@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const CircleContainer = styled.div`
   position: relative;
   height: 530px;
-  margin-bottom: 56px;
+  
 `;
 
 
@@ -18,6 +18,7 @@ export const Circle = styled.div`
   transform: translate(-50%, -50%);
   border: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
+  
 `;
 
 export const CenterLine = styled.div`

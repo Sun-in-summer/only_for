@@ -33,8 +33,9 @@ export const SliderTrack = styled.div`
   display: flex;
   gap: 20px;
   transition: transform 0.3s ease;
+  padding-top: 56px
 `;
-export const Slide = styled.div`
+export const SingleSlide = styled.div`
   min-width: 300px;
   padding: 0;
 `;

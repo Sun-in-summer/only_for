@@ -3,26 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import gsap from "gsap";
 import {getSampleData} from "../../../mocks/mock-data"
-import {
-  EventDescription,
-  YearsDisplay,
-  StartYear,
-  EndYear,
-  Navigation,
-  NavButton,
-  NavInfo,
-  NavButtons,
-  SliderContainer,
-  SliderNav,
-  Slider,
-  SliderButton,
-  SliderTrack,
-  Slide,
-  EventYear,
-
-} from "./time-line-block.styes";
 import { CIRCLE_DEGREES } from '../../const';
 import CircleTimeline from '../circle-time-line/circle-time-line';
+import YearsDisplay from '../years-display/years-display';
+import Navigation from '../navigation/navigation';
+import EventsSlider from '../events-slider/events-slider';
 
 
 
@@ -63,67 +48,23 @@ const TimelineBlock: React.FC = () => {
         sampleData={sampleData}
         activePeriod={activePeriod}
         onPeriodChange={handlePeriodChange}
-        angleStep= {angleStep}
+        angleStep={angleStep}
       />
-        
 
-        <YearsDisplay>
-          <StartYear className={isAnimating ? "animating" : ""}>
-            {sampleData[activePeriod].startYear}
-          </StartYear>
-          <EndYear className={isAnimating ? "animating" : ""}>
-            {sampleData[activePeriod].endYear}
-          </EndYear>
-        </YearsDisplay>
-    
+      <YearsDisplay
+        isAnimating={isAnimating}
+        sampleData={sampleData}
+        activePeriod={activePeriod}
+      />
 
-      <Navigation>
-        <NavInfo>
-          0{activePeriod + 1}/0{totalPeriods}
-        </NavInfo>
-        <NavButtons>
-          <NavButton
-            onClick={() =>
-              handlePeriodChange(
-                (activePeriod - 1 + totalPeriods) % totalPeriods
-              )
-            }
-            disabled={isAnimating}
-          >
-            ←
-          </NavButton>
-          <NavButton
-            onClick={() =>
-              handlePeriodChange((activePeriod + 1) % totalPeriods)
-            }
-            disabled={isAnimating}
-          >
-            →
-          </NavButton>
-        </NavButtons>
-      </Navigation>
+      <Navigation
+        totalPeriods={totalPeriods}
+        activePeriod={activePeriod}
+        handlePeriodChange={handlePeriodChange}
+        isAnimating={isAnimating}
+      />
 
-      <SliderContainer>
-        <SliderNav>
-          <SliderButton onClick={prevSlide}>‹</SliderButton>
-          <SliderButton onClick={nextSlide}>›</SliderButton>
-        </SliderNav>
-
-        <Slider>
-          <SliderTrack
-            style={{
-              transform: `translateX(-${currentSlide * 320}px)`,
-            }}
-          >
-            {sampleData[activePeriod].events.map((event, index) => (
-              <Slide key={`${activePeriod}-${index}`}>
-                <EventYear>{event.year}</EventYear>
-                <EventDescription>{event.year}</EventDescription>
-              </Slide>
-            ))}
-          </SliderTrack>
-        </Slider>
-      </SliderContainer>
+      <EventsSlider activeEvents={sampleData[activePeriod].events} />
     </div>
   );
 };

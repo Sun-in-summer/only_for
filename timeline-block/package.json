@@ -23,6 +23,7 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
     "@types/gsap": "^1.20.2",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",

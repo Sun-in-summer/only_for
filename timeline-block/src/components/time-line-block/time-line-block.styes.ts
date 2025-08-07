@@ -22,7 +22,7 @@ export const Container = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  position: relative;
+ position: relative;
   max-width: 1320px;
   padding: 170px 40px 140px 80px;
   &::before {
@@ -60,22 +60,22 @@ export const Title = styled.h2`
   }
 `;
 
-export const CenterLine = styled.div`
+export const VerticalLine = styled.div`
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
   width: 1px;
   background: rgba(66, 86, 122, 0.2);
-  transform: translateX(-50%) translateX(20px);
+  transform: translateX(-50%) ;
 `;
 
-export const VerticalLine = styled.div`
+export const  CenterLine = styled.div`
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   height: 1px;
   background: rgba(66, 86, 122, 0.2);
-  transform: translateY(-50%) translateY(-25px);
+  transform: translateY(-50%) ;
 `;

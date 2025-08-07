@@ -19,8 +19,8 @@ const TimelineBlock: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   
   const sampleData = getSampleData();
-      const totalPeriods = sampleData.length;
-    const angleStep = CIRCLE_DEGREES / totalPeriods;
+  const totalPeriods = sampleData.length;
+  const angleStep = CIRCLE_DEGREES / totalPeriods;
   
     const handlePeriodChange = (index : number) => {
       if (index === activePeriod || isAnimating) return;
@@ -46,9 +46,10 @@ const TimelineBlock: React.FC = () => {
   return (
     <Container>
       <InnerContainer>
-        <Title>Исторические даты</Title>
         <CenterLine />
         <VerticalLine />
+        <Title>Исторические даты</Title>
+
         <CircleTimeline
           sampleData={sampleData}
           activePeriod={activePeriod}

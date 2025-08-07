@@ -4,8 +4,7 @@ import styled from "styled-components";
 export const CircleContainer = styled.div`
   position: relative;
   height: 530px;
-  
-`;
+ `;
 
 
 
@@ -15,22 +14,22 @@ export const Circle = styled.div`
   top: 50%;
   width: 530px;
   height: 530px;
-  transform: translate(calc(-50%) , calc(-50% + 40px));
+  transform: translate(-50% , -50% );
   border: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
 `;
 
-export const CenterLine = styled.div`
+export const VerticalLine = styled.div`
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
   width: 1px;
   background: rgba(66, 86, 122, 0.2);
-  transform: translateX(-50%);
+  // transform: translateX(calc(-50% - 30px));
 `;
 
-export const VerticalLine = styled.div`
+export const CenterLine = styled.div`
   position: absolute;
   top: 50%;
   left: 0;

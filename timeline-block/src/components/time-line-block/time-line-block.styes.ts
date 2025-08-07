@@ -42,7 +42,7 @@ export const Title = styled.h2`
   color: #42567a;
   margin: 0 0 56px 0;
   max-width: 350px;
-  line-height: 1.2;
+  line-height: 1;
   position: relative;
   &::before {
     content: "";

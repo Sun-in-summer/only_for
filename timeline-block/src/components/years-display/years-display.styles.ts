@@ -4,7 +4,7 @@ export const YearsDisplay = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% + 25px), calc(-50% - 40px));
   display: flex;
   gap: 100px;
   z-index: 1;

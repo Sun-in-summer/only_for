@@ -15,10 +15,9 @@ export const Circle = styled.div`
   top: 50%;
   width: 530px;
   height: 530px;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50%) , calc(-50% + 40px));
   border: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
-  
 `;
 
 export const CenterLine = styled.div`

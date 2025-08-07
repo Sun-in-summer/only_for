@@ -31,6 +31,7 @@ const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
   ) => {
     const inverseRotation = -circleRotation;
     return (
+    
       <StyledPeriodPoint
         ref={ref}
         className={isActive ? "active" : "inactive"}

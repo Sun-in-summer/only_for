@@ -23,7 +23,7 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
  position: relative;
-  max-width: 1320px;
+  max-width: 1440зч;
   padding: 170px 40px 140px 80px;
   &::before {
     content: "";
@@ -62,17 +62,18 @@ export const Title = styled.h2`
 
 export const VerticalLine = styled.div`
   position: absolute;
-  left: 50%;
+  left: calc(50% + 20px);
   top: 0;
   bottom: 0;
   width: 1px;
   background: rgba(66, 86, 122, 0.2);
-  transform: translateX(-50%) ;
+  transform: translateX(-50% )
+  ;
 `;
 
 export const  CenterLine = styled.div`
   position: absolute;
-  top: 50%;
+  top: calc(50% - 90px) ;
   left: 0;
   right: 0;
   height: 1px;

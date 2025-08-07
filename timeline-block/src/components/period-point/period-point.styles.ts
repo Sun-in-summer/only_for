@@ -38,6 +38,19 @@ export const PeriodPoint = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px; /* увеличенная зона */
+    height: 40px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: auto;
+  }
 
   &.active {
     width: 56px;

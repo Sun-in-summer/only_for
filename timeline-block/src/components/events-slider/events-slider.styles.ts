@@ -31,9 +31,10 @@ import styled from "styled-components";
 // `;
 export const SliderTrack = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 80px;
   transition: transform 0.3s ease;
-  padding-top: 56px
+  padding-top: 56px;
+  height: 250px;
 `;
 export const SingleSlide = styled.div`
   min-width: 300px;
@@ -53,3 +54,38 @@ export const EventDescription = styled.div`
   line-height: 1.5;
 `;
    
+
+
+export const InnerNavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  color: #3877ee;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    content: "";
+ 
+  }
+
+  &.swiper-button-prev {
+    left: 10px;
+  }
+
+  &.swiper-button-next {
+    right: 10px;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+`;

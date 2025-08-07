@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const YearsDisplay = styled.div`
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: calc(50% - 10px);
+  top: calc(50% - 55px);
   transform: translate(calc(-50% + 25px), calc(-50% - 40px));
   display: flex;
   gap: 100px;
@@ -15,7 +15,7 @@ export const StartYear = styled.div`
   color: #5d5fef;
   line-height: 1;
   transition: opacity 0.3s ease;
-
+  z-index: 1;
   &.animating {
     opacity: 0.5;
   }
@@ -26,7 +26,7 @@ export const EndYear = styled.div`
   color: #ef5da8;
   line-height: 1;
   transition: opacity 0.3s ease;
-
+  z-index: 1;
   &.animating {
     opacity: 0.5;
   }

@@ -9,10 +9,12 @@ type PeriodPointProps = {
   x: number;
   y: number;
   onClick: () => void;
+  circleRotation: number;
 };
 
 const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
-  ({ index, period, isActive, x, y, onClick }, ref) => {
+  ({ index, period, isActive, x, y, onClick , circleRotation}, ref) => {
+    const inverseRotation = -circleRotation;
     return (
       <StyledPeriodPoint
         ref={ref}
@@ -23,8 +25,16 @@ const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
         }}
         onClick={onClick}
       >
-        {isActive && <PointNumber>{index + 1}</PointNumber>}
-        {isActive && <PointTitle>{period.title}</PointTitle>}
+        {isActive && (
+          <PointNumber style={{ transform: `rotate(${inverseRotation}deg)` }}>
+            {index + 1}
+          </PointNumber>
+        )}
+        {isActive && (
+          <PointTitle style={{ transform: `rotate(${inverseRotation}deg)` }}>
+            {period.title}
+          </PointTitle>
+        )}
       </StyledPeriodPoint>
     );
   }

@@ -8,6 +8,7 @@ type PeriodPointsListProps = {
   angleStep: number;
   onPeriodChange: (index: number) => void;
   dotsRef: React.MutableRefObject<(HTMLButtonElement | null)[]>;
+  circleRotation: number;
 };
 
 const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
@@ -16,11 +17,12 @@ const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
   angleStep,
   onPeriodChange,
   dotsRef,
+  circleRotation,
 }) => {
   return (
     <>
       {sampleData.map((period, index) => {
-        const angle = index * angleStep - CIRCLE_QUATER; ;
+        const angle = index * angleStep - CIRCLE_QUATER;
         const isActive = index === activePeriod;
         const x = Math.cos((angle * Math.PI) / HALF_OF_CIRCLE) * CIRCLE_RADIUS;
         const y = Math.sin((angle * Math.PI) / HALF_OF_CIRCLE) * CIRCLE_RADIUS;
@@ -33,8 +35,11 @@ const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
             isActive={isActive}
             x={x}
             y={y}
-            ref={(el) => { dotsRef.current[index] = el }}
+            ref={(el) => {
+              dotsRef.current[index] = el;
+            }}
             onClick={() => onPeriodChange(index)}
+            circleRotation={circleRotation}
           />
         );
       })}

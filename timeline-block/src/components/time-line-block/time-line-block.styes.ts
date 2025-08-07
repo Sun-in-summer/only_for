@@ -10,21 +10,31 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
 
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0px;
+  //   top: 0;
+  //   bottom: 0;
+  //   width: 1px;
+  //   background: rgba(66, 86, 122, 0.1);
+  // }
+`;
+
+export const InnerContainer = styled.div`
+  position: relative;
+  max-width: 1320px;
+  padding: 170px 40px 140px 80px;
   &::before {
     content: "";
     position: absolute;
-    left: 80px;
+    left: 0px;
     top: 0;
     bottom: 0;
     width: 1px;
     background: rgba(66, 86, 122, 0.1);
   }
 `;
-
-export const InnerContainer = styled.div`
- max-width: 1320px;
- margin: 170px 80px 104px 40px
-`
 
 export const Title = styled.h2`
   font-size: 56px;
@@ -39,7 +49,7 @@ export const Title = styled.h2`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -35px; 
+    left: -75px; 
     transform: translateX(-50%);
     width: 5px;
     background: linear-gradient(
@@ -57,7 +67,7 @@ export const CenterLine = styled.div`
   bottom: 0;
   width: 1px;
   background: rgba(66, 86, 122, 0.2);
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateX(20px);
 `;
 
 export const VerticalLine = styled.div`
@@ -67,5 +77,5 @@ export const VerticalLine = styled.div`
   right: 0;
   height: 1px;
   background: rgba(66, 86, 122, 0.2);
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateY(-25px);
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Navigation = styled.div`
-  margin-top: -56px;
+  // margin-top: -56px;
   // display: flex;
   // justify-content: space-between;
   // align-items: center;
@@ -18,24 +18,24 @@ export const NavButtons =  styled.div`
   gap: 20px;
 `
 
-export const NavButton =  styled.button`
+export const NavButton = styled.button`
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1px solid rgba(66, 86, 122, 0.5);
-  background: white;
-  color: #42567A;
+  background: #f4f5f9;
+  color: #42567a;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover:not(:disabled) {
-    background: #42567A;
-    color: white;
+    background: white;
+    color: #42567a;
   }
-  
+
   &:disabled {
     opacity: 0.3;
     cursor: not-allowed;
   }
-`
+`;

@@ -12,6 +12,12 @@ export const PointTitle = styled.div`
   white-space: nowrap;
 `;
 
+export const PointNumber = styled.span`
+  font-size: 20px;
+  font-weight: 400;
+  color: #42567a;
+`;
+
 export const InnerContentWrapper = styled.div`
   display: flex;
   flex-direction: column; 
@@ -54,7 +60,6 @@ export const PeriodPoint = styled.button`
     border: 1px solid rgba(66, 86, 122, 0.2);
   }
 
-  // Default state for PointTitle: hidden
   ${PointTitle} {
     opacity: 0;
     visibility: hidden;
@@ -62,34 +67,37 @@ export const PeriodPoint = styled.button`
     pointer-events: none;
   }
 
-  // Condition 1: Inactive point, on hover - show title
+  ${PointNumber} {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
   &.inactive:hover ${PointTitle} {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
 
-  // Condition 2: Active point, animation finished - show title
-  &.active.animation-complete ${PointTitle} {
+  &.active ${PointTitle} {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transition: opacity 0.3s ease, visibility 3s ease;
   }
 
-  // Condition 3: During animation (when .animation-complete is NOT present) - hide title for ALL points
-  // This rule overrides the hover/active rules when animation is ongoing
-  &:not(.animation-complete) ${PointTitle} {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  &.inactive:hover ${PointNumber} {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.active ${PointNumber} {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 3s ease;
   }
 `;
 
-export const PointNumber = styled.span`
-  font-size: 20px;
-  font-weight: 400;
-  color: #42567a;
 
-`;
 
 

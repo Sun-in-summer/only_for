@@ -11,6 +11,7 @@ type PeriodPointProps = {
   onClick: () => void;
   circleRotation: number;
   animationComplete: boolean;
+  animationOngoing: boolean;
 };
 
 const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
@@ -24,6 +25,7 @@ const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
       onClick,
       circleRotation,
       animationComplete,
+      animationOngoing,
     },
     ref
   ) => {
@@ -41,9 +43,9 @@ const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
         <InnerContentWrapper
           style={{ transform: `rotate(${inverseRotation}deg)` }}
         >
-          {isActive && <PointNumber>{index + 1}</PointNumber>}      
-          <PointTitle>{period.title}</PointTitle>{" "}
-          </InnerContentWrapper>
+           <PointNumber>{index + 1}</PointNumber>
+          {!animationOngoing && <PointTitle>{period.title}</PointTitle>}
+        </InnerContentWrapper>
       </StyledPeriodPoint>
     );
   }

@@ -30,10 +30,12 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
 
   const [circleRotation, setCircleRotation] = useState(0);
   const [animationComplete, setAnimationComplete] = useState(true);
+  const [animationOngoing, setAnimationOngoing] = useState(false);
 
   useEffect(() => {
     if (activePeriod !== lastActivePeriod.current) {
       setAnimationComplete(false);
+      setAnimationOngoing(true)
       animateToPosition(activePeriod);
     }
   }, [activePeriod]);
@@ -76,6 +78,7 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
       },
       onComplete: () => {
         setAnimationComplete(true); 
+        setAnimationOngoing(false);
       },
     });
 
@@ -138,6 +141,7 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
           onPeriodChange={onPeriodChange}
           circleRotation={circleRotation}
           animationComplete={animationComplete}
+          animationOngoing={animationOngoing}
         />
       </Circle>
     </CircleContainer>

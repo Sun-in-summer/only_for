@@ -1,5 +1,6 @@
 import { TimeSegment } from '../../shared/interfaces/time-segment';
-import { PeriodPoint as StyledPeriodPoint, PointNumber, PointTitle } from "./period-point.styles"
+import { PeriodPoint as StyledPeriodPoint, PointNumber, PointTitle } from "./period-point.styles";
+import { forwardRef } from 'react';
 
 type PeriodPointProps = {
   index: number;
@@ -10,28 +11,26 @@ type PeriodPointProps = {
   onClick: () => void;
 };
 
-const PeriodPoint: React.FC<PeriodPointProps> = ({
-  index,
-  period,
-  isActive,
-  x,
-  y,
-  onClick,
-}) => {
-  return (
-    <StyledPeriodPoint
-      className={isActive ? "active" : "inactive"}
-      style={{
-        left: `calc(50% + ${x}px)`,
-        top: `calc(50% + ${y}px)`,
-      }}
-      onClick={onClick}
-    >
-      {isActive && <PointNumber>{index + 1}</PointNumber>}
-      {isActive && <PointTitle>{period.title}</PointTitle>}
-    </StyledPeriodPoint>
-  );
-};
+const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
+  ({ index, period, isActive, x, y, onClick }, ref) => {
+    return (
+      <StyledPeriodPoint
+        ref={ref}
+        className={isActive ? "active" : "inactive"}
+        style={{
+          left: `calc(50% + ${x}px)`,
+          top: `calc(50% + ${y}px)`,
+        }}
+        onClick={onClick}
+      >
+        {isActive && <PointNumber>{index + 1}</PointNumber>}
+        {isActive && <PointTitle>{period.title}</PointTitle>}
+      </StyledPeriodPoint>
+    );
+  }
+);
+
+PeriodPoint.displayName = "PeriodPoint";
 
 export default PeriodPoint;
 

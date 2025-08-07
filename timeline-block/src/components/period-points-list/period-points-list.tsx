@@ -1,4 +1,4 @@
-import { CIRCLE_RADIUS } from '../../const';
+import { CIRCLE_QUATER, CIRCLE_RADIUS, HALF_OF_CIRCLE } from '../../const';
 import { TimeSegment } from '../../shared/interfaces/time-segment';
 import PeriodPoint from '../period-point/period-point';
 
@@ -7,6 +7,7 @@ type PeriodPointsListProps = {
   activePeriod: number;
   angleStep: number;
   onPeriodChange: (index: number) => void;
+  dotsRef: React.MutableRefObject<(HTMLButtonElement | null)[]>;
 };
 
 const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
@@ -14,14 +15,15 @@ const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
   activePeriod,
   angleStep,
   onPeriodChange,
+  dotsRef,
 }) => {
   return (
     <>
       {sampleData.map((period, index) => {
-        const angle = index * angleStep - 90;
+        const angle = index * angleStep - CIRCLE_QUATER; ;
         const isActive = index === activePeriod;
-        const x = Math.cos((angle * Math.PI) / 180) * CIRCLE_RADIUS;
-        const y = Math.sin((angle * Math.PI) / 180) * CIRCLE_RADIUS;
+        const x = Math.cos((angle * Math.PI) / HALF_OF_CIRCLE) * CIRCLE_RADIUS;
+        const y = Math.sin((angle * Math.PI) / HALF_OF_CIRCLE) * CIRCLE_RADIUS;
 
         return (
           <PeriodPoint
@@ -31,6 +33,7 @@ const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
             isActive={isActive}
             x={x}
             y={y}
+            ref={(el) => { dotsRef.current[index] = el }}
             onClick={() => onPeriodChange(index)}
           />
         );

@@ -29,9 +29,11 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
   const lastActivePeriod = useRef(activePeriod);
 
   const [circleRotation, setCircleRotation] = useState(0);
+  const [animationComplete, setAnimationComplete] = useState(true);
 
   useEffect(() => {
     if (activePeriod !== lastActivePeriod.current) {
+      setAnimationComplete(false);
       animateToPosition(activePeriod);
     }
   }, [activePeriod]);
@@ -71,6 +73,9 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
             gsap.getProperty(circleRef.current, "rotation") as number
           );
         }
+      },
+      onComplete: () => {
+        setAnimationComplete(true); 
       },
     });
 
@@ -132,6 +137,7 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
           dotsRef={dotsRef}
           onPeriodChange={onPeriodChange}
           circleRotation={circleRotation}
+          animationComplete={animationComplete}
         />
       </Circle>
     </CircleContainer>

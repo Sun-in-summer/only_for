@@ -9,6 +9,7 @@ type PeriodPointsListProps = {
   onPeriodChange: (index: number) => void;
   dotsRef: React.MutableRefObject<(HTMLButtonElement | null)[]>;
   circleRotation: number;
+  animationComplete: boolean;
 };
 
 const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
@@ -18,6 +19,8 @@ const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
   onPeriodChange,
   dotsRef,
   circleRotation,
+  animationComplete,
+  
 }) => {
   return (
     <>
@@ -40,6 +43,7 @@ const PeriodPointsList: React.FC<PeriodPointsListProps> = ({
             }}
             onClick={() => onPeriodChange(index)}
             circleRotation={circleRotation}
+            animationComplete={animationComplete}
           />
         );
       })}

@@ -1,5 +1,5 @@
 import { TimeSegment } from '../../shared/interfaces/time-segment';
-import { PeriodPoint as StyledPeriodPoint, PointNumber, PointTitle } from "./period-point.styles";
+import { PeriodPoint as StyledPeriodPoint, PointNumber, PointTitle, InnerContentWrapper } from "./period-point.styles";
 import { forwardRef } from 'react';
 
 type PeriodPointProps = {
@@ -10,10 +10,23 @@ type PeriodPointProps = {
   y: number;
   onClick: () => void;
   circleRotation: number;
+  animationComplete: boolean;
 };
 
 const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
-  ({ index, period, isActive, x, y, onClick , circleRotation}, ref) => {
+  (
+    {
+      index,
+      period,
+      isActive,
+      x,
+      y,
+      onClick,
+      circleRotation,
+      animationComplete,
+    },
+    ref
+  ) => {
     const inverseRotation = -circleRotation;
     return (
       <StyledPeriodPoint
@@ -25,16 +38,12 @@ const PeriodPoint = forwardRef<HTMLButtonElement, PeriodPointProps>(
         }}
         onClick={onClick}
       >
-        {isActive && (
-          <PointNumber style={{ transform: `rotate(${inverseRotation}deg)` }}>
-            {index + 1}
-          </PointNumber>
-        )}
-        {isActive && (
-          <PointTitle style={{ transform: `rotate(${inverseRotation}deg)` }}>
-            {period.title}
-          </PointTitle>
-        )}
+        <InnerContentWrapper
+          style={{ transform: `rotate(${inverseRotation}deg)` }}
+        >
+          {isActive && <PointNumber>{index + 1}</PointNumber>}      
+          <PointTitle>{period.title}</PointTitle>{" "}
+          </InnerContentWrapper>
       </StyledPeriodPoint>
     );
   }

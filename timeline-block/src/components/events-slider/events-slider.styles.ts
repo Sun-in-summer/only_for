@@ -13,20 +13,20 @@ export const SliderTrack = styled.div`
   position: relative;
   @media (max-width: 430px) {
     padding: 0rem;
+    gap: 25px;
   }
 `;
 
 export const EventYear = styled.div`
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px;
+  font-size: clamp(16px, 1.1429rem + 0.8036vw, 25px);
   font-weight: 500;
   color: #5d5fef;
   margin-bottom: 15px;
-  
 `;
 
 export const EventDescription = styled.div`
-  font-size: 20px;
+  font-size: clamp(14px, 0.875rem + 0.5357vw, 20px);
   font-weight: 400;
   color: #42567a;
   line-height: 1.5;
@@ -34,6 +34,9 @@ export const EventDescription = styled.div`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  @media (max-width: 430px) {
+    line-height: 1.45;
+  }
 `;
    
 

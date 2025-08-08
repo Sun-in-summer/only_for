@@ -3,15 +3,21 @@ import styled from "styled-components";
 export const Navigation = styled.div`
 `;
 
-export const NavInfo =  styled.div`
+export const NavInfo = styled.div`
   font-size: 14px;
-  color: #42567A;
+  color: #42567a;
   margin-bottom: 20px;
-`
-export const NavButtons =  styled.div`
+  @media (max-width: 430px) {
+    margin-bottom: 10px;
+  }
+`;
+export const NavButtons = styled.div`
   display: flex;
   gap: 20px;
-`
+  @media (max-width: 430px) {
+    gap: 8px;
+  }
+`;
 
 export const NavButton = styled.button`
   width: 50px;

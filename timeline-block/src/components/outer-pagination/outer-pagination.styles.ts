@@ -12,7 +12,7 @@ export const PaginationWrapper = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 19px; 
+  bottom: 32px; 
   z-index: 50;
   pointer-events: auto;
   @media (min-width: 430px) { 

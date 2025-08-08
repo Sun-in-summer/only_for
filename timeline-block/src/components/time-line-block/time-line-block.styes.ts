@@ -4,31 +4,31 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 170px 80px 104px;
   background: #f4f5f9;
   font-family: "PT Sans", sans-serif;
   position: relative;
   overflow: hidden;
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0px;
-  //   top: 0;
-  //   bottom: 0;
-  //   width: 1px;
-  //   background: rgba(66, 86, 122, 0.1);
-  // }
+ 
 `;
 
 export const InnerContainer = styled.div`
- position: relative;
-  max-width: 1440зч;
-  padding: 170px 40px 140px 80px;
+  position: relative;
+  max-width: 1440px;
+
+  padding: 170px 40px 104px 80px;
   &::before {
     content: "";
     position: absolute;
     left: 0px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(66, 86, 122, 0.1);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
     top: 0;
     bottom: 0;
     width: 1px;
@@ -40,7 +40,6 @@ export const Title = styled.h2`
   font-size: 56px;
   font-weight: 700;
   color: #42567a;
-  margin: 0 0 56px 0;
   max-width: 350px;
   line-height: 1;
   position: relative;
@@ -73,7 +72,7 @@ export const VerticalLine = styled.div`
 
 export const  CenterLine = styled.div`
   position: absolute;
-  top: calc(50% - 90px) ;
+  top: 45%  ;
   left: 0;
   right: 0;
   height: 1px;

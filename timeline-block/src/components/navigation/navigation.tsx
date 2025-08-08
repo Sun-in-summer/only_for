@@ -26,13 +26,13 @@ const Navigation: React.FC<NavigationProps> = ({
           }
           disabled={isAnimating}
         >
-          ←
+          {"<"}
         </NavButton>
         <NavButton
           onClick={() => handlePeriodChange((activePeriod + 1) % totalPeriods)}
           disabled={isAnimating}
         >
-          →
+          {">"}
         </NavButton>
       </NavButtons>
     </StyledNavigation>

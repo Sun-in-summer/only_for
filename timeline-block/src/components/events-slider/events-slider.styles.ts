@@ -34,16 +34,19 @@ export const SliderTrack = styled.div`
   gap: 80px;
   transition: transform 0.3s ease;
   padding-top: 56px;
-  height: 250px;
+  height: 191px;
+  max-width: 1200px;
+  padding-left: 60px;
 `;
 export const SingleSlide = styled.div`
   min-width: 300px;
   padding: 0;
 `;
 export const EventYear = styled.div`
+  font-family: "Bebas Neue", sans-serif;
   font-size: 25px;
-  font-weight: 400;
-  color: #5d5FEF;
+  font-weight: 700;
+  color: #5d5fef;
   margin-bottom: 15px;
 `;
 
@@ -71,6 +74,7 @@ export const InnerNavButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 
   &:after {
     content: "";
@@ -78,14 +82,14 @@ export const InnerNavButton = styled.button`
   }
 
   &.swiper-button-prev {
-    left: 10px;
+    left: 0px;
   }
 
   &.swiper-button-next {
     right: 10px;
   }
 
-  &:hover {
-    background: rgba(0, 0, 0, 0.6);
-  }
+  // &:hover {
+  //   background: rgba(0, 0, 0, 0.6);
+  // }
 `;

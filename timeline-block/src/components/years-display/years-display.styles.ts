@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const YearsDisplay = styled.div`
   position: absolute;
   left: calc(50% - 10px);
-  top: calc(50% - 55px);
-  transform: translate(calc(-50% + 25px), calc(-50% - 40px));
+  top: 45%;
+  transform: translate(-50%, -50% );
   display: flex;
   gap: 100px;
   z-index: 1;

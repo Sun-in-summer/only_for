@@ -3,20 +3,22 @@ import styled from "styled-components";
 
 export const CircleContainer = styled.div`
   position: relative;
-  height: 530px;
- `;
+   height: 400px;
+
+`;
 
 
 
 export const Circle = styled.div`
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   width: 530px;
   height: 530px;
-  transform: translate(-50% , -50% );
+  transform: translate(-50%, -50%);
   border: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
+
 `;
 
 export const VerticalLine = styled.div`

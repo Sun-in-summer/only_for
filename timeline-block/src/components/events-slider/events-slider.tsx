@@ -22,22 +22,13 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ activeEvents }) => {
         {activeEvents.map((event, index) => (
           <SwiperSlide key={index}>
             <SliderTrack>
-              {/* {activeEvents.map((event, index) => (
-                  <SingleSlide key={index}>
-                    <EventYear>{event.year}</EventYear>
-                    <EventDescription>{event.description}</EventDescription>
-                  </SingleSlide>
-                ))} */}
-              {/* <SwiperResetStyles /> */}
               <InnerNavButton className="swiper-button-prev">
                 { "<"}
               </InnerNavButton>
               <InnerNavButton className="swiper-button-next">
                 {">"}
               </InnerNavButton>
-              {/* <InnerNavButton>{">"}</InnerNavButton>
-              <InnerNavButton>{"<"}</InnerNavButton> */}
-              <Swiper
+                 <Swiper
                 modules={[Navigation]}
                 spaceBetween={20} // расстояние между слайдами
                 slidesPerView={3} // показывать по 3 элемента на слайде

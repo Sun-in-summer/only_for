@@ -55,6 +55,10 @@ export const EventDescription = styled.div`
   font-weight: 400;
   color: #42567a;
   line-height: 1.5;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
    
 

@@ -2,3 +2,8 @@ export const CIRCLE_DEGREES = 360;
 export const HALF_OF_CIRCLE = CIRCLE_DEGREES / 2;
 export const CIRCLE_QUATER = CIRCLE_DEGREES / 4;
 export const CIRCLE_RADIUS = 265;
+
+export const EVENT_DESCRIPTION_COLUMN_GAP = 80;
+export const DEFAULT_EVENTS_ON_SLIDE = 3;
+export const MINIMIZED_EVENTS_ON_SLIDE = 2;
+export const DEFAULT_BIG_SLIDES_QTY = 1;

@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 export const CircleContainer = styled.div`
   position: relative;
-   height: 400px;
-
+  height: 415px;
+  @media (max-width: 430px) {
+    height: 225px;
+  }
 `;
 
 
@@ -12,13 +14,25 @@ export const CircleContainer = styled.div`
 export const Circle = styled.div`
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   width: 530px;
   height: 530px;
   transform: translate(-50%, -50%);
   border: 1px solid rgba(66, 86, 122, 0.2);
   border-radius: 50%;
+  z-index: 20;
+  @media (max-width: 780px) {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    animation: hideAndDisplayNone 0.3s forwards;
+  }
 
+  @keyframes hideAndDisplayNone {
+    to {
+      display: none;
+    }
+  }
 `;
 
 export const VerticalLine = styled.div`
@@ -28,7 +42,9 @@ export const VerticalLine = styled.div`
   bottom: 0;
   width: 1px;
   background: rgba(66, 86, 122, 0.2);
-  // transform: translateX(calc(-50% - 30px));
+  @media (max-width: 780px) {
+    display: none;
+  }
 `;
 
 export const CenterLine = styled.div`

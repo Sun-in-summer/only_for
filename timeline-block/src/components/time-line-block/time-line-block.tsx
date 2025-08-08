@@ -1,26 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState } from "react";
 import "swiper/css";
-import gsap from "gsap";
 import {getSampleData} from "../../../mocks/mock-data"
 import { CIRCLE_DEGREES } from '../../const';
 import CircleTimeline from '../circle-time-line/circle-time-line';
 import YearsDisplay from '../years-display/years-display';
 import Navigation from '../navigation/navigation';
 import EventsSlider from '../events-slider/events-slider';
-import { CenterLine, Container, InnerContainer, Title, VerticalLine } from './time-line-block.styes';
-
-
+import { CenterLine, Container, InnerContainer, SliderNavigationWrapper, Title, VerticalLine } from './time-line-block.styes';
+import OuterPagination from '../outer-pagination/outer-pagination';
 
 
 const TimelineBlock: React.FC = () => {
   const [activePeriod, setActivePeriod] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+
   
   const sampleData = getSampleData();
   const totalPeriods = sampleData.length;
   const angleStep = CIRCLE_DEGREES / totalPeriods;
+ 
   
     const handlePeriodChange = (index : number) => {
       if (index === activePeriod || isAnimating) return;
@@ -28,20 +27,12 @@ const TimelineBlock: React.FC = () => {
       setIsAnimating(true);
       setActivePeriod(index);
       setCurrentSlide(0);
-  
       setTimeout(() => setIsAnimating(false), 300);
     };
   
-    // const nextSlide = () => {
-    //   const maxSlides = sampleData[activePeriod].events.length;
-    //   setCurrentSlide((prev) => (prev + 1) % maxSlides);
-    // };
-  
-    // const prevSlide = () => {
-    //   const maxSlides = sampleData[activePeriod].events.length;
-    //   setCurrentSlide((prev) => (prev - 1 + maxSlides) % maxSlides);
-    // };
-  
+  const handleOuterPaginationClick = (periodIndex: number) => {
+    handlePeriodChange(periodIndex);
+  };
  
   return (
     <Container>
@@ -62,15 +53,25 @@ const TimelineBlock: React.FC = () => {
           sampleData={sampleData}
           activePeriod={activePeriod}
         />
+        <SliderNavigationWrapper>
+          <Navigation
+            totalPeriods={totalPeriods}
+            activePeriod={activePeriod}
+            handlePeriodChange={handlePeriodChange}
+            isAnimating={isAnimating}
+            
+          />
 
-        <Navigation
+          <EventsSlider
+            activeEvents={sampleData[activePeriod].events}
+            onSlideChange={setCurrentSlide}
+          />
+        </SliderNavigationWrapper>
+        <OuterPagination
           totalPeriods={totalPeriods}
           activePeriod={activePeriod}
-          handlePeriodChange={handlePeriodChange}
-          isAnimating={isAnimating}
+          onPaginationClick={handleOuterPaginationClick}
         />
-
-        <EventsSlider activeEvents={sampleData[activePeriod].events} />
       </InnerContainer>
     </Container>
   );

@@ -130,7 +130,6 @@ const CircleTimeline: React.FC<CircleTimelineProps> = ({
     lastActivePeriod.current = targetIndex;
   };
 
-  const y = 1;
 
   return (
     <CircleContainer>

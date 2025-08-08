@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 export const Navigation = styled.div`
-  // margin-top: -56px;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // margin-bottom: 56px;
 `;
 
 export const NavInfo =  styled.div`
@@ -26,8 +21,13 @@ export const NavButton = styled.button`
   background: #f4f5f9;
   color: #42567a;
   font-size: 20px;
+  font-size: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  @media (max-width: 430px) {
+    width: 25px;
+    height: 25px;
+  }
 
   &:hover:not(:disabled) {
     background: white;

@@ -1,4 +1,6 @@
 
+import { NextIcon } from '../../ui/icons/next-icon/next-icon';
+import { PrevIcon } from '../../ui/icons/prev-icon/prev-icon';
 import {Navigation as StyledNavigation, NavInfo, NavButtons, NavButton} from "./navigation.styles";
 
 type NavigationProps = {
@@ -26,13 +28,13 @@ const Navigation: React.FC<NavigationProps> = ({
           }
           disabled={isAnimating}
         >
-          {"<"}
+          <PrevIcon />
         </NavButton>
         <NavButton
           onClick={() => handlePeriodChange((activePeriod + 1) % totalPeriods)}
           disabled={isAnimating}
         >
-          {">"}
+          <NextIcon /> 
         </NavButton>
       </NavButtons>
     </StyledNavigation>

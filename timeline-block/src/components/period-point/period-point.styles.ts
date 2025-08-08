@@ -34,7 +34,6 @@ export const PeriodPoint = styled.button`
   transform: translate(-50%, -50%);
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +43,7 @@ export const PeriodPoint = styled.button`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40px; /* увеличенная зона */
+    width: 40px; 
     height: 40px;
     transform: translate(-50%, -50%);
     border-radius: 50%;

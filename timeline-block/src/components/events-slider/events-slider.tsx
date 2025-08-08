@@ -5,6 +5,7 @@ import {
   EventYear,
   SliderTrack,
   InnerNavButton,
+  InnerSlideContainer,
 } from "./events-slider.styles";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -27,7 +28,6 @@ const EventsSlider : React.FC<EventsSliderProps>=({ activeEvents, onSlideChange 
 
   return (
     <Swiper
-      // style={{ overflow: "visible" }}
       spaceBetween={EVENT_DESCRIPTION_COLUMN_GAP}
       slidesPerView={DEFAULT_BIG_SLIDES_QTY}
       onSlideChange={(swiper) => {
@@ -58,17 +58,25 @@ const EventsSlider : React.FC<EventsSliderProps>=({ activeEvents, onSlideChange 
               }}
               breakpoints={{
                 0: {
-                  slidesPerView: MINIMIZED_EVENTS_ON_SLIDE,
+                  slidesPerView: "auto",
+                  spaceBetween: 25,
                 },
+                430: {
+                  slidesPerView: MINIMIZED_EVENTS_ON_SLIDE,
+                  spaceBetween: EVENT_DESCRIPTION_COLUMN_GAP,
+                },
+
                 1024: {
                   slidesPerView: DEFAULT_EVENTS_ON_SLIDE,
                 },
               }}
             >
               {activeEvents.map((event, index) => (
-                <SwiperSlide key={index}>
-                  <EventYear>{event.year}</EventYear>
-                  <EventDescription>{event.description}</EventDescription>
+                <SwiperSlide key={index} className="inner-slide">
+                  <InnerSlideContainer>
+                    <EventYear>{event.year}</EventYear>
+                    <EventDescription>{event.description}</EventDescription>
+                  </InnerSlideContainer>
                 </SwiperSlide>
               ))}
             </Swiper>

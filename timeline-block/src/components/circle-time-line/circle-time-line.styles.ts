@@ -6,6 +6,7 @@ export const CircleContainer = styled.div`
   height: 415px;
   @media (max-width: 430px) {
     height: 182px;
+    width: 0px;
   }
 `;
 

@@ -59,13 +59,13 @@ const TimelineBlock: React.FC = () => {
             activePeriod={activePeriod}
             handlePeriodChange={handlePeriodChange}
             isAnimating={isAnimating}
-            
           />
-
-          <EventsSlider
-            activeEvents={sampleData[activePeriod].events}
-            onSlideChange={setCurrentSlide}
-          />
+          <div>
+              <EventsSlider
+              activeEvents={sampleData[activePeriod].events}
+              onSlideChange={setCurrentSlide}
+            />
+          </div>
         </SliderNavigationWrapper>
         <OuterPagination
           totalPeriods={totalPeriods}

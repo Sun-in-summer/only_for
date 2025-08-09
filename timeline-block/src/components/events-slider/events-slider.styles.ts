@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SwiperSlide } from "swiper/react";
 
 
 export const SliderTrack = styled.div`
@@ -8,16 +9,15 @@ export const SliderTrack = styled.div`
   padding: 56px 80px 0px 80px;
   height: 135px;
   max-width: 1200px;
-  padding-left: 80px;
-  overflow: visible;
   position: relative;
   @media (max-width: 430px) {
     padding: 0rem;
-    gap: 25px;
     margin-bottom: 58px;
     margin-top: 20px;
   }
 `;
+
+
 
 export const EventYear = styled.div`
   font-family: "Bebas Neue", sans-serif;
@@ -36,6 +36,9 @@ export const EventDescription = styled.div`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  word-break: normal;
   @media (max-width: 430px) {
     line-height: 1.45;
     -webkit-line-clamp: 4;
@@ -79,45 +82,18 @@ export const InnerNavButton = styled.button`
   }
 `;
 
-// export const StyledSwiper = styled.div`
-//   .swiper-pagination {
-//     display: flex;
-//     justify-content: center;
-//     gap: 10px;
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     bottom: 24px;
-//     z-index: 10;
-//   }
-//   .swiper-pagination-bullet {
-//     width: 6px;
-//     height: 6px;
-//     background-color: #42567a;
-//     opacity: 0.3;
-//     margin: 0;
-//     border-radius: 50%;
-//     transition: opacity 0.2s;
-//   }
-//   .swiper-pagination-bullet-active {
-//     opacity: 1;
-//   }
-// `;
-
 
 export const InnerSlideContainer = styled.div`
   @media (max-width: 430px) {
     width: 166px;
-    flex-shrink: 0;
+    flex-shrink: 2;
     transition: opacity 0.3s ease;
 
-  
-    .swiper-slide:not(.swiper-slide-active) & {
+    .inner-slide:not(.swiper-slide-active) & {
       opacity: 0.4;
     }
 
-   
-    .swiper-slide-active & {
+    .inner-slide.swiper-slide-active & {
       opacity: 1;
     }
   }

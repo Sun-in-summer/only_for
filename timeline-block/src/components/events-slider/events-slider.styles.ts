@@ -75,6 +75,9 @@ export const InnerNavButton = styled.button`
     opacity: 0.3;
     cursor: not-allowed;
   }
+  &.swiper-button-disabled {
+    display: none;
+  }
   &:after {
     content: "";
   }

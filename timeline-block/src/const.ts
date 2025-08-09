@@ -5,6 +5,7 @@ export const CIRCLE_RADIUS = 265;
 
 export const EVENT_DESCRIPTION_COLUMN_GAP = 80;
 export const MIN_EVENT_DESCRIPTION_COLUMN_GAP = 25;
-export const DEFAULT_EVENTS_ON_SLIDE = 3;
+export const MID_EVENTS_ON_SLIDE = 2;
+export const DEFAULT_EVENTS_ON_SLIDE = 3.5;
 export const MINIMIZED_EVENTS_ON_SLIDE = 1.5;
 export const DEFAULT_BIG_SLIDES_QTY = 1;

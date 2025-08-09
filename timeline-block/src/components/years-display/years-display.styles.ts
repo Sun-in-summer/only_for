@@ -22,7 +22,7 @@ export const YearsDisplay = styled.div`
   }
 `;
 export const StartYear = styled.div`
-  font-size: clamp(56px, 15vw, 200px);
+  font-size: clamp(56px, 12vw, 200px);
   font-weight: 700;
   color: #5d5fef;
   line-height: 1;
@@ -35,7 +35,7 @@ export const StartYear = styled.div`
 
 `;
 export const EndYear = styled.div`
-  font-size: clamp(56px, 15vw, 200px);
+  font-size: clamp(56px, 12vw, 200px);
   font-weight: 700;
   color: #ef5da8;
   line-height: 1;

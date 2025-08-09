@@ -15,6 +15,7 @@ import {
   DEFAULT_BIG_SLIDES_QTY,
   DEFAULT_EVENTS_ON_SLIDE,
   EVENT_DESCRIPTION_COLUMN_GAP,
+  MID_EVENTS_ON_SLIDE,
   MIN_EVENT_DESCRIPTION_COLUMN_GAP,
   MINIMIZED_EVENTS_ON_SLIDE,
 } from "../../const";
@@ -55,7 +56,6 @@ const EventsSlider: React.FC<EventsSliderProps> = ({
               className="inner-swiper"
               modules={[Navigation]}
               spaceBetween={EVENT_DESCRIPTION_COLUMN_GAP}
-              
               navigation={{
                 prevEl: ".inner-swiper-button-prev",
                 nextEl: ".inner-swiper-button-next",
@@ -70,6 +70,10 @@ const EventsSlider: React.FC<EventsSliderProps> = ({
                   centeredSlides: false,
                 },
                 430: {
+                  slidesPerView: MID_EVENTS_ON_SLIDE,
+                  spaceBetween: EVENT_DESCRIPTION_COLUMN_GAP,
+                },
+                1024: {
                   slidesPerView: DEFAULT_EVENTS_ON_SLIDE,
                   spaceBetween: EVENT_DESCRIPTION_COLUMN_GAP,
                 },

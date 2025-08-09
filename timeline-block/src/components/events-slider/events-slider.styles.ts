@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SwiperSlide } from "swiper/react";
+
 
 
 export const SliderTrack = styled.div`
@@ -10,6 +10,7 @@ export const SliderTrack = styled.div`
   height: 135px;
   max-width: 1200px;
   position: relative;
+  overflow: visible;
   @media (max-width: 430px) {
     padding: 0rem;
     margin-bottom: 58px;

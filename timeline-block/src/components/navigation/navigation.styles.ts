@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Navigation = styled.div`
+  padding-left: 60px;
+  @media (max-width: 430px) {
+    padding-left: 0;
+  }
 `;
 
 export const NavInfo = styled.div`
@@ -14,12 +18,16 @@ export const NavInfo = styled.div`
 export const NavButtons = styled.div`
   display: flex;
   gap: 20px;
+
   @media (max-width: 430px) {
     gap: 8px;
   }
 `;
 
 export const NavButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
   border-radius: 50%;

@@ -17,7 +17,7 @@ export const InnerContainer = styled.div`
   position: relative;
   max-width: 1440px;
 
-  padding: 170px 40px 104px 80px;
+  padding: 170px 40px 104px 20px;
 
   @media (max-width: 1300px) {
     padding: 5rem 1rem 1rem 3rem;
@@ -51,11 +51,12 @@ export const Title = styled.h2`
   font-weight: 700;
   color: #42567a;
   margin: 0;
-  max-width: clamp(20vw, 35vw, 350px);
+  max-width: clamp(15vw, 35vw, 350px);
   line-height: 1;
   position: relative;
   white-space: normal; 
   transition: all 0.5s ease;
+  padding-left: 60px;
 
   &::before {
     content: "";
@@ -74,16 +75,21 @@ export const Title = styled.h2`
 
   @media (max-width: 1300px) {
    line-height: 1.2;
+  
     &::before {
     content: "";
     position: absolute;
     left: -45px;
   }
+  @media (max-width: 430px) {
+    padding-left: 0;   
+  }
+  
 `;
 
 export const VerticalLine = styled.div`
   position: absolute;
-  left: calc(50% + 20px);
+  left: calc(50% - 10px);
   top: 0;
   bottom: 0;
   width: 1px;
@@ -116,7 +122,7 @@ export const CenterLine = styled.div`
   background: rgba(66, 86, 122, 0.2);
   transform: translateY(-50%);
   @media (max-width: 900px) {
-    top: 41%;
+    top: 45%;
   }
   @media (max-width: 430px) {
     top: 50%;

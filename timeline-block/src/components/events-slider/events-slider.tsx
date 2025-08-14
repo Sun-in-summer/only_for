@@ -19,7 +19,7 @@ import {
   MIN_EVENT_DESCRIPTION_COLUMN_GAP,
   MINIMIZED_EVENTS_ON_SLIDE,
 } from "../../const";
-import { useImperativeHandle, useRef, forwardRef } from "react";
+
 
 type EventsSliderProps = {
   activeEvents: EventName[];
@@ -30,6 +30,7 @@ const EventsSlider: React.FC<EventsSliderProps> = ({
   activeEvents,
   onSlideChange,
 }) => {
+  console.log(activeEvents);
   return (
     <Swiper
       spaceBetween={EVENT_DESCRIPTION_COLUMN_GAP}
@@ -37,14 +38,22 @@ const EventsSlider: React.FC<EventsSliderProps> = ({
       onSlideChange={(swiper) => {
         onSlideChange?.(swiper.activeIndex);
       }}
+      slidesPerGroup={1}
       pagination={{
         el: ".swiper-pagination",
         enabled: true,
         clickable: true,
       }}
     >
-      {activeEvents.map((event, index) => (
-        <SwiperSlide className="outer-swiper-slide" key={index}>
+      {activeEvents.map((event, index, activeEvents) => (
+        <SwiperSlide
+          className="outer-swiper-slide"
+          key={index}
+          style={{
+            width:
+              activeEvents.length <= DEFAULT_EVENTS_ON_SLIDE ? "100%" : "auto",
+          }}
+        >
           <SliderTrack>
             <InnerNavButton className="inner-swiper-button-prev">
               {"<"}
@@ -63,6 +72,8 @@ const EventsSlider: React.FC<EventsSliderProps> = ({
               nested={true}
               allowTouchMove={true}
               touchStartPreventDefault={false}
+              loop={false}
+              slidesPerGroup={1}
               breakpoints={{
                 0: {
                   slidesPerView: MINIMIZED_EVENTS_ON_SLIDE,
@@ -74,13 +85,20 @@ const EventsSlider: React.FC<EventsSliderProps> = ({
                   spaceBetween: EVENT_DESCRIPTION_COLUMN_GAP,
                 },
                 1024: {
-                  slidesPerView: DEFAULT_EVENTS_ON_SLIDE,
+                  slidesPerView: Math.min(
+                    activeEvents.length,
+                    DEFAULT_EVENTS_ON_SLIDE
+                  ),
                   spaceBetween: EVENT_DESCRIPTION_COLUMN_GAP,
                 },
               }}
             >
               {activeEvents.map((event, index) => (
-                <SwiperSlide key={index} className="inner-slide">
+                <SwiperSlide
+                  key={index}
+                  className="inner-slide"
+                  style={{ width: `100%` }}
+                >
                   <InnerSlideContainer>
                     <EventYear>{event.year}</EventYear>
                     <EventDescription>{event.description}</EventDescription>

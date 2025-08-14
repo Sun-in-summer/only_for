@@ -88,6 +88,7 @@ export const InnerNavButton = styled.button`
 
 
 export const InnerSlideContainer = styled.div`
+
   @media (max-width: 430px) {
     width: 166px;
     flex-shrink: 2;

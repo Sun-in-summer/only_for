@@ -63,7 +63,7 @@ export const Title = styled.h2`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -75px;
+    left: -17px;
     transform: translateX(-50%);
     width: 5px;
     background: linear-gradient(

@@ -21,7 +21,7 @@ const TimelineBlock: React.FC = () => {
   const angleStep = CIRCLE_DEGREES / totalPeriods;
  
   
-    const handlePeriodChange = (index : number) => {
+  const handlePeriodChange = (index : number) => {
       if (index === activePeriod || isAnimating) return;
   
       setIsAnimating(true);
@@ -61,7 +61,7 @@ const TimelineBlock: React.FC = () => {
             isAnimating={isAnimating}
           />
           <div>
-              <EventsSlider
+            <EventsSlider
               activeEvents={sampleData[activePeriod].events}
               onSlideChange={setCurrentSlide}
             />

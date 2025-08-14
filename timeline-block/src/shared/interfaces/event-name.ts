@@ -1,5 +1,5 @@
 export interface EventName {
   id: number;
-  year: number;
+  year: number | string;
   description: string;
 }

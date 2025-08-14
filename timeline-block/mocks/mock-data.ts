@@ -148,6 +148,11 @@ export function getSampleData (): TimeSegment[]  {
           year: 1988,
           description: "Основание Музея современного искусства в Нью-Йорке",
         },
+        {
+          id: 4,
+          year: "",
+          description: "",
+        },
       ],
     },
     {
